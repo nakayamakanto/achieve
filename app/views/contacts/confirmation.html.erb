@@ -1,0 +1,38 @@
+<h2>登録内容確認</h2>
+<% if @contact.errors.any? %>
+  <strong>入力内容にエラーがあります</strong>
+  <ul>
+    <% @contact.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <%= form_for(@contact) do |f| %>
+    <div>
+      <%= "お名前:#{@contact.name}" %>
+      <%= hidden_field :contact, :name %>
+    </div>
+    <div>
+      <%= "メールアドレス:#{@contact.email}" %>
+      <%= hidden_field :contact, :email %>
+    </div>
+    <div>
+      <%= "タイトル#{@contact.title}" %>
+      <%= hidden_field :contact, :title %>
+    </div>
+    <div>
+      <%= "内容#{@contact.content}" %>
+      <%= hidden_field :contact, :content %>
+    </div>
+    <div>
+      <%= f.submit "登録する" %>
+    </div>
+  <% end %>
+<% end %>
+<%= form_for @contact,url: contacts_new_path do |f| %>
+  <%= hidden_field :contact, :name %>
+  <%= hidden_field :contact, :email %>
+  <%= hidden_field :contact, :title %>
+  <%= hidden_field :contact, :content %>
+  <%= f.submit "再入力" %>
+<% end %>

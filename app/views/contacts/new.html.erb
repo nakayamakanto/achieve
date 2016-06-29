@@ -1,0 +1,21 @@
+<%= form_for @contact, url: contacts_confirmation_path do |f| %>
+  <div>
+    <%= f.label :name, "お名前" %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :email, "メールアドレス" %>
+    <%= f.text_field :email %>
+  </div>
+  <div>
+    <%= f.label :title, "タイトル" %>
+    <%= f.text_field :title %>
+  </div>
+  <div>
+    <%= f.label :content, "内容" %>
+    <%= f.text_area :content %>
+  </div>
+  <div>
+    <%= f.submit "登録する" %>
+  </div>
+<% end %>
