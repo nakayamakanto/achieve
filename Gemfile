@@ -51,3 +51,8 @@ group :development do
   gem 'spring'
 end
 
+group :production do
+  #use mysql for db
+  gem 'mysql2'
+end
+
