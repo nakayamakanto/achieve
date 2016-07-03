@@ -40,16 +40,16 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 
   # mailer setting
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.default_url_options = { host: Settings.myhost , port: 3000 }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.raise_delivery_errors = true
 
   config.action_mailer.smtp_settings = { 
-    address: Settings.sakura.server_address, 
+    address: Settings.mail_server_address, 
     port: 587, 
     authentication: :login, 
     :enable_starttls_auto => false,
-    user_name: Settings.sakura.mail_address, 
-    password: Settings.sakura.pass 
+    user_name: Settings.mail_address, 
+    password: Settings.mail_pass 
   }
 end
