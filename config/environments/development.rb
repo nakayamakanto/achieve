@@ -45,11 +45,11 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
 
   config.action_mailer.smtp_settings = { 
-    address: Settings.mail_server_address, 
+    address: ENV['MAIL_SERVER_ADDRESS'], 
     port: 587, 
     authentication: :login, 
     :enable_starttls_auto => false,
-    user_name: Settings.mail_address, 
-    password: Settings.mail_pass 
+    user_name: ENV["MAIL_ADDRESS"], 
+    password: ENV["MAIL_PASSWORD"] 
   }
 end

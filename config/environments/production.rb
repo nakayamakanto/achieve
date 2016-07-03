@@ -64,17 +64,18 @@ Rails.application.configure do
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
   # mailer setting
+  # mailer setting
   config.action_mailer.default_url_options = { host: Settings.myhost , port: 3000 }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.raise_delivery_errors = true
 
   config.action_mailer.smtp_settings = { 
-    address: Settings.mail_server_address, 
+    address: ENV['MAIL_SERVER_ADDRESS'], 
     port: 587, 
     authentication: :login, 
     :enable_starttls_auto => false,
-    user_name: Settings.mail_address, 
-    password: Settings.mail_pass 
+    user_name: ENV["MAIL_ADDRESS"], 
+    password: ENV["MAIL_PASSWORD"] 
   }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
