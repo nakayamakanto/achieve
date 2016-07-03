@@ -65,7 +65,7 @@ Rails.application.configure do
   # config.action_mailer.raise_delivery_errors = false
   # mailer setting
   # mailer setting
-  config.action_mailer.default_url_options = { host: ENV["URL"] , port: 3000 }
+  config.action_mailer.default_url_options = { host: ENV["URL"] }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.raise_delivery_errors = true
 
